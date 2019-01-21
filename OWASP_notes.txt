@@ -42,3 +42,5 @@ Run the Entire website over HTTPS not just the login
 
 HSTS forces this.  In browsers that support HSTS a webpage header instructs the browser to change http links to https.
 
+
+More stuff **********************************
