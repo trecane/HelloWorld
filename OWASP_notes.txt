@@ -1,0 +1,44 @@
+OWASP
+See the OWASP top 10 Risks for the current year
+
+===============================================
+Injection attack
+Web apps use a number of command interpreters which are vulnerable to injection.
+SQL, LDAP, XPATH, OS cmd, XSLT, XML, js, logging
+
+SQL
+Use Paramaterized Queries
+Java
+String query = "select * from users where user_name=? ";
+PreparedStatement pstmt = connection. preparedStatement(query);
+pstmt.setString(1, custname);
+ResultSet results = pstmt.executeQurey();
+
+Stored Procedures
+
+See the OWASP "SQL Injection Prevention Cheat Sheet"
+
+All the other interpreters must use an "encoder".  See "OWASP Enterprise Security API"
+
+=============================================
+Cross Site Scripting (XSS)
+The target of XSS is the browsers of other users
+js code could be posted in a comment on a forum.
+The code is stored in the db on the server.
+When other users load the comments they load the js too and are attacked.
+
+Can be js or just html that alters or adds to an input tag
+Many Variations
+
+Prevention
+	Validate and Encode
+		Use Whitelist Validation
+	
+		Contextual Encoding
+	
+==============================================	
+Strict Transport Security - HSTS
+Run the Entire website over HTTPS not just the login
+
+HSTS forces this.  In browsers that support HSTS a webpage header instructs the browser to change http links to https.
+
